@@ -1,6 +1,9 @@
 # Contact_Manager_App
-Efficiently manage your contacts with the Contact Manager App
+Efficiently manage your contacts with the Contact Manager App 
+
+
 [![Watch the video](https://img.youtube.com/vi/6qe3Ztv645c/0.jpg)](https://www.youtube.com/shorts/6qe3Ztv645c)
+
 
 
 **Contact Manager App with Data-Driven ViewModel**
