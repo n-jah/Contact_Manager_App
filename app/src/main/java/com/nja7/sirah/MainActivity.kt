@@ -1,5 +1,4 @@
 package com.nja7.sirah
-
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -14,7 +13,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.nja7.sirah.adapters.homeAdapter
 import com.nja7.sirah.databinding.ActivityMainBinding
-import com.nja7.sirah.fragments.Home
 import com.nja7.sirah.model.Person
 
 class SharedViewModel : ViewModel() {
@@ -38,9 +36,7 @@ class MainActivity : AppCompatActivity() {
     private fun init() {
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
         navControl = Navigation.findNavController(this, R.id.nav_host_fragment)
-
         searchBar = findViewById(R.id.search_bar_home)
         val title: TextView = binding.textviewHome
         val addPerson: ImageView = binding.addPerson
@@ -64,13 +60,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        
         val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
 
         searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
-
             override fun onQueryTextChange(newText: String?): Boolean {
                 sharedViewModel.sharedData.value = newText
                 return true
