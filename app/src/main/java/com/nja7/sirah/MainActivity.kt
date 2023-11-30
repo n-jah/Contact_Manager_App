@@ -18,14 +18,13 @@ import com.nja7.sirah.model.Person
 class SharedViewModel : ViewModel() {
     val sharedData = MutableLiveData<String>()
     val selectedContacts = MutableLiveData<List<Person>>()
-
 }
 class MainActivity : AppCompatActivity() {
     private lateinit var navControl: NavController
     lateinit var binding: ActivityMainBinding
-    lateinit var adapter: homeAdapter
     private lateinit var searchBar: SearchView
     private lateinit var toolbar: Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
@@ -46,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             navControl.navigate(R.id.action_home2_to_contacts2)
 
         }
+
         searchBar.setOnQueryTextFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
                 title.visibility = View.GONE
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        
+
         val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
 
         searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

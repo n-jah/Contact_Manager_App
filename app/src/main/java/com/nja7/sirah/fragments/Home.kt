@@ -22,7 +22,6 @@ class Home : Fragment() {
     private lateinit var mutableList: MutableList<Person>
     private lateinit var adapter: homeAdapter
 
-//    private var listener: OnElementSelectedListener? = null
     private val sharedViewModel: SharedViewModel by activityViewModels()
 
 
@@ -36,8 +35,6 @@ class Home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
 
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
